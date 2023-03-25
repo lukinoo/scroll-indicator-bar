@@ -3,8 +3,8 @@ const sections = document.querySelectorAll(".section");
 
 // function which creates indicator a tags
 const createPageIndicator = () => {
-  const pageIndocator = document.createElement("div");
-  pageIndocator.classList.add("page-indicator");
+  const pageIndicator = document.createElement("div");
+  pageIndicator.classList.add("page-indicator");
 
   for (let i = 0; i < sections.length; i++) {
     // section ids
@@ -16,9 +16,9 @@ const createPageIndicator = () => {
     indicator.setAttribute("href", `#${sectionId}`);
 
     // appending indicator in pageIndicator
-    pageIndocator.appendChild(indicator);
+    pageIndicator.appendChild(indicator);
 
-    pageIndocator.childNodes[0].classList.add("active");
+    pageIndicator.childNodes[0].classList.add("active");
   }
 
   // appending page indicator in body
