@@ -22,7 +22,7 @@ const createPageIndicator = () => {
   }
 
   // appending page indicator in body
-  document.body.appendChild(pageIndocator);
+  document.body.appendChild(pageIndicator);
 };
 
 createPageIndicator();
