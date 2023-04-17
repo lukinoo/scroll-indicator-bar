@@ -1,8 +1,32 @@
-// global variables
-const sections = document.querySelectorAll(".section");
+const sectionArr = [
+  "section-one",
+  "section-two",
+  "section-three",
+  "section-four",
+];
+
+const createSections = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    const section = document.createElement("section");
+    section.setAttribute("id", arr[i]);
+    section.classList.add("section", arr[i]);
+
+    // section title
+    const title = document.createElement("h2");
+    title.classList.add("title");
+    title.innerHTML = `${i + 1}. ${arr[i]}`;
+
+    section.appendChild(title);
+
+    document.body.appendChild(section);
+  }
+};
+
+createSections(sectionArr);
 
 // function which creates indicator a tags
 const createPageIndicator = () => {
+  const sections = document.querySelectorAll(".section");
   const pageIndicator = document.createElement("div");
   pageIndicator.classList.add("page-indicator");
 
@@ -36,6 +60,7 @@ const isSectionActive = (top, height) => {
 
 const handleSectionScroll = () => {
   const indicators = document.querySelectorAll(".indicator");
+  const sections = document.querySelectorAll(".section");
 
   sections.forEach((section, index) => {
     let top = section.offsetTop;

@@ -39,13 +39,27 @@ body {
 
 .page-indicator .indicator {
   width: 5px;
-  height: 30px;
+  height: 35px;
   display: inline-block;
   background: #dcecfb;
+  position: relative;
   transition: all 0.2s ease;
 }
 
 .page-indicator .indicator.active {
-  height: 55px;
+  height: 50px;
   background: #00417a;
+}
+
+.page-indicator .indicator.active::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -1rem;
+  width: 0;
+  height: 0;
+  transform: translate(0, -50%) rotate(90deg);
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #00417a;
 }
